@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiasLens - AI Bias Evaluator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>BiasLens - AI Bias Evaluator</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="file">Upload Dataset (CSV):</label>
+            <input type="file" name="file" id="file" required>
+            <label for="target_col">Target Column:</label>
+            <input type="text" name="target_col" placeholder="Enter target column name" required>
+            <label for="sensitive_col">Sensitive Column:</label>
+            <input type="text" name="sensitive_col" placeholder="Enter sensitive column name" required>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+</body>
+</html>

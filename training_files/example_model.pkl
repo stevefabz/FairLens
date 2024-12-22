@@ -1,0 +1,14 @@
+from sklearn.ensemble import RandomForestClassifier
+import pickle
+import pandas as pd
+
+# Example: Save a pretrained Random Forest model
+data = pd.read_csv('training_files/adult_data.csv')
+X = data.drop(columns=['income'])
+y = data['income']
+
+model = RandomForestClassifier()
+model.fit(X, y)
+
+with open('training_files/example_model.pkl', 'wb') as f:
+    pickle.dump(model, f)

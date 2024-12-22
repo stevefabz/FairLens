@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiasLens - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Results</h1>
+        <h2>Bias Metrics:</h2>
+        <pre>{{ bias_metrics }}</pre>
+
+        <h2>SHAP Values:</h2>
+        <img src="{{ shap_path }}" alt="SHAP Summary Plot">
+
+        <h2>Bias Heatmap:</h2>
+        <img src="{{ heatmap_path }}" alt="Bias Heatmap">
+
+        <h2>Recommendations:</h2>
+        <p>{{ recommendations }}</p>
+
+        <a href="/">Analyze Another Dataset</a>
+    </div>
+</body>
+</html>
